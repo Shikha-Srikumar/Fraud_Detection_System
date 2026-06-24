@@ -31,7 +31,7 @@ All copyright and claims owned by the owner and collabrators of the repository a
 
 ## Dataset
 
-- **Source:** [Kaggle – Credit Card Fraud Detection](https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection/data)  
+- **Source:** [Kaggle – Financial Transactions Dataset for Fraud Detection](https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection/data)  
   - 5000000 transactions.  
   - Features: `timestamp` and `amount`.
 
