@@ -1,0 +1,21 @@
+# Core scientific stack (Python 3.12 compatible)
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
+
+# Modeling
+scikit-learn==1.5.2
+imbalanced-learn==0.12.4
+
+# Viz
+matplotlib==3.9.2
+
+# Notebooks / kernel
+ipykernel==6.29.5
+
+# Data access / utilities
+kaggle==1.7.4.5
+tqdm==4.67.1
+requests==2.32.3
+
+xgboost==2.1.1
