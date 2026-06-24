@@ -1,12 +1,8 @@
-#Fraud Detection with Drift-Aware Evaluation
+## Fraud Detection with Drift-Aware Evaluation
 --------
 
-This repository is created for version control for the project titled Fraud Detection System, as per the requiremnet for the completion of Post 
-Gradution Certification Program conducted by Center for Development of Advanced Computing (CDAC), Bangalore, India. The Repository contains the  following:
-	[1] Datasets obtained from Kaggle
-	[2] Baseline and Trained Model
-	[3] Performance and Confusion Matrices
-	[4] Application 
+The project addresses the challenge of detecting **rare fraudulent transactions** while monitoring **concept drift** — gradual changes in data patterns that degrade model recall over time.  
+We designed a **recall-focused pipeline** that adapts dynamically to maintain consistent detection quality in streaming data.
 
 
 All copyright and claims owned by the owner and collabrators of the repository along with Center for Development of Advance Computing (CDAC),Bangalore.
@@ -20,6 +16,16 @@ All copyright and claims owned by the owner and collabrators of the repository a
 - Simulate **streaming data** using time-ordered batches.  
 - Measure **performance drift** via recall trends, PSI (Population Stability Index), and KS statistics.  
 - Quantify the trade-off between **recall stability** and **manual review workload**.
+
+---
+
+## Team Members and their roles
+
+Part 1: Shikha (Data & EDA Lead)
+Part 2: Sneha Malhotra (Baseline Model & Model Comparison Lead)
+Part 3: Gyanvi (Drift Simulation & Detection Lead)
+Part 4: Samvas (Retraining Pipeline & SpringBoot Lead)
+Part 5: Moksha (Threshold Recalibration & Visualization Lead)
 
 ---
 
