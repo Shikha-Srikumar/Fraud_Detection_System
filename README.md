@@ -5,7 +5,7 @@ The project addresses the challenge of detecting **rare fraudulent transactions*
 We designed a **recall-focused pipeline** that adapts dynamically to maintain consistent detection quality in streaming data.
 
 
-All copyright and claims owned by the owner and collabrators of the repository along with Center for Development of Advance Computing (CDAC),Bangalore.
+All copyright and claims owned by the owner and collabrators of the repository along with Center for Development of Advance Computing (CDAC Bangalore).
 
 ---
 
