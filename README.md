@@ -139,7 +139,7 @@ fraud-detection-drift-aware/
 │   ├── sanity.py
 │   └── utils.py
 │
-├── visual/
+├── visuals/
 │   └── eda_visuals
 │
 ├── requirements.txt
