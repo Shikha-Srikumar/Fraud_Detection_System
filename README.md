@@ -21,11 +21,11 @@ All copyright and claims owned by the owner and collabrators of the repository a
 
 ## Team Members and their roles
 
-Part 1: Shikha (Data & EDA Lead)
-Part 2: Sneha Malhotra (Baseline Model & Model Comparison Lead)
-Part 3: Gyanvi (Drift Simulation & Detection Lead)
-Part 4: Samvas (Retraining Pipeline & SpringBoot Lead)
-Part 5: Moksha (Threshold Recalibration & Visualization Lead)
+- **Part 1: Shikha (Data & EDA Lead)**
+- **Part 2: Sneha Malhotra (Baseline Model & Model Comparison Lead)**
+- **Part 3: Gyanvi (Drift Simulation & Detection Lead)**
+- **Part 4: Samvas (Retraining Pipeline & SpringBoot Lead)**
+- **Part 5: Moksha (Threshold Recalibration & Visualization Lead)**
 
 ---
 
