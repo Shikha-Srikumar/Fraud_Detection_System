@@ -31,9 +31,13 @@ All copyright and claims owned by the owner and collabrators of the repository a
 
 ## Dataset
 
-- **Source:** [Kaggle – Financial Transactions Dataset for Fraud Detection](https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection/data)  
-  - 5000000 transactions.  
-  - Features: `timestamp` and `amount`.
+- **Source:** [Kaggle – Financial Transactions Dataset for Fraud Detection](https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection/data)
+  
+This dataset contains 5 million synthetically generated financial transactions designed to simulate real-world behavior for fraud detection research and machine learning applications. Each transaction record includes fields such as:
+* Transaction Details: ID, timestamp, sender/receiver accounts, amount, type (deposit, transfer, etc.)
+* Behavioral Features: time since last transaction, spending deviation score, velocity score, geo-anomaly score
+* Metadata: location, device used, payment channel, IP address, device hash
+* Fraud Indicators: binary fraud label (is_fraud) and type of fraud (e.g., money laundering, account takeover)
 
 For this project, a **375K subset** was sampled chronologically and split into 4 batches:
 
