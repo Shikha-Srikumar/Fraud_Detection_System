@@ -1,52 +1,55 @@
 package com.cdac.fraud.service;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.File;
+import java.io.InputStreamReader;
 
 @Service
 public class RetrainingService {
 
-    public void triggerOfflineRetraining(double psiValue, String features) {
-        System.out.println("--- INITIATING ASYNC PYTHON RETRAINING PIPELINE ---");
-        
+    @Async // Runs in a separate background thread
+    public void triggerPythonRetraining() {
+        System.out.println("🚀 Background Thread Started: Initiating ML Retraining Pipeline...");
+
         try {
-            // Path to where your team's Python scripts are stored
-            // Note: Adjust the working directory path to match your local setup
-            String pythonScriptPath = "src/retrain.py"; 
-            
-            ProcessBuilder processBuilder = new ProcessBuilder(
-                "python", 
-                pythonScriptPath, 
-                "--psi", String.valueOf(psiValue),
-                "--features", features
-            );
-            
-            // Set the working directory to your Python src folder
-            // processBuilder.directory(new File("C:/path/to/Fraud_Detection_System-WebApp/src"));
-            
-            processBuilder.redirectErrorStream(true); // Merge errors with standard output
+            // 1. Define the command to run Python
+            // NOTE: Use "python3" instead of "python" if you are on Linux/Mac
+            ProcessBuilder processBuilder = new ProcessBuilder("python", "mock_retrain.py");
+
+            // 2. Point it to the folder where your Python scripts live
+            // Adjust this path to match where your GitHub repository folder is
+            processBuilder.directory(new File("\"U:\\home\\samvas\\Fraud_Detection_System\\retraining-pipeline\\src\\main\\java\\com\\cdac\\fraud\\service\""));
+    
+            // 3. Start the process
             Process process = processBuilder.start();
 
-            // Read the output from the Python script
+            // 4. Capture the Python console output (Standard Output)
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
             while ((line = reader.readLine()) != null) {
-                System.out.println("[PYTHON LOG]: " + line);
+                System.out.println("[PYTHON-ML] " + line);
             }
 
+            // 5. Capture any Python errors (Standard Error)
+            BufferedReader errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            while ((line = errorReader.readLine()) != null) {
+                System.err.println("[PYTHON-ERROR] " + line);
+            }
+
+            // 6. Wait for the Python script to finish and get exit code
             int exitCode = process.waitFor();
             if (exitCode == 0) {
-                System.out.println("SUCCESS: Challenger Model trained and saved.");
-                // Here you would eventually read the JSON output from Python and save to ModelRegistry DB
+                System.out.println("✅ Retraining Complete! New Challenger Model is ready.");
+                // TODO later: Trigger the Champion-Challenger DB comparison here
             } else {
-                System.err.println("FAILURE: Python script crashed with exit code " + exitCode);
-                // Graceful degradation: System continues using the old Champion model
+                System.err.println(" Retraining Failed with exit code: " + exitCode);
             }
 
         } catch (Exception e) {
-            System.err.println("CRITICAL ERROR: Failed to execute ProcessBuilder.");
+            System.err.println("CRITICAL ERROR: Failed to launch Python script.");
             e.printStackTrace();
         }
     }
