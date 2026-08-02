@@ -12,7 +12,7 @@ public class RetrainingService {
 
     @Async // Runs in a separate background thread
     public void triggerPythonRetraining() {
-        System.out.println("🚀 Background Thread Started: Initiating ML Retraining Pipeline...");
+        System.out.println(" Background Thread Started: Initiating ML Retraining Pipeline...");
 
         try {
             // 1. Define the command to run Python
@@ -42,7 +42,7 @@ public class RetrainingService {
             // 6. Wait for the Python script to finish and get exit code
             int exitCode = process.waitFor();
             if (exitCode == 0) {
-                System.out.println("✅ Retraining Complete! New Challenger Model is ready.");
+                System.out.println(" Retraining Complete! New Challenger Model is ready.");
                 // TODO later: Trigger the Champion-Challenger DB comparison here
             } else {
                 System.err.println(" Retraining Failed with exit code: " + exitCode);
