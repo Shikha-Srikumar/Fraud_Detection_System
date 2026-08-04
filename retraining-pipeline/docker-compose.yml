@@ -13,7 +13,7 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-    # 🔍 Checks every 3s if PostgreSQL is actually accepting database queries
+    #  Checks every 3s if PostgreSQL is actually accepting database queries
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d fraud_detection_db"]
       interval: 3s
@@ -33,7 +33,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: admin
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    # ⏳ Tells Spring Boot to wait until PostgreSQL passes its healthcheck
+    #  Tells Spring Boot to wait until PostgreSQL passes its healthcheck
     depends_on:
       postgres_db:
         condition: service_healthy

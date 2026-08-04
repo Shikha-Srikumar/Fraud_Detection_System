@@ -1,5 +1,7 @@
 package com.cdac.fraud.dto;
 
+import lombok.Data;
+
 @Data
 public class DashboardDTO {
 	private String dataDrift;
